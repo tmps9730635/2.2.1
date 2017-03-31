@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html></html>
+<head align='center'>
+	<style = "text/css">
+		#img1popout {
+			z-index: 5;
+			position: absolute;
+			width: 550px;
+			height: 300px;
+			top: 50px;
+			border: 1px dashed #000099;
+			background-color: #ddddff;
+
+		}
+		img{
+			height: 230px;
+			width:230px;
+		}
+		#img1popin{}
+		
+	</style>
+	<script type = "text/javascript">
+		function initPopout()
+		{
+			var thumb1 = document.getElementById("image1"); 
+			
+			thumb1.onmouseover = showDetailedView;
+		}
+
+		function showDetailedView()
+		{
+			var im1 = document.getElementById("img1popin");
+			im1.id = "img1popout";
+			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='ice cream.jpg' width='250'><TH align='left'>Dessert Name: <TH align='left'>Ice cream<TR></TABLE> ";
+			var popOut = document.getElementById("img1popout");
+			popOut.onmouseout = hideDetailedView;			
+		}
+
+		function hideDetailedView()
+		{
+			var im1 = document.getElementById("img1popout");
+			im1.id = "img1popin";
+			im1.innerHTML = "";
+		}
+	</script>
+</head>
+<body onload="initPopout();" align="center" background = "candy.jpg">
+<br>
+<table align='center'>
+	<caption style="font-family: Verdana; font-size: 300%;">Our Desserts:</caption>
+	<tbody>
+	<tr>
+		<td>
+			<img id="image1" src="ice cream.jpg"><div id = "img1popin"></div>
+		</td>
+		<td>
+			<img src="https://art-gallery-tmps9730635.c9users.io/macaroons.jpg">
+		</td>
+		<td>
+			<img src="cake.jpg">
+		</td>
+		<td>
+			<img src="pop.jpg">
+		</td>
+		<td>
+			<img src="parfait.jpg">
+		</td>
+		<td>
+			<img src="donut.jpg">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="https://s-media-cache-ak0.pinimg.com/originals/33/4d/00/334d002f47a80c913b410967f881fe13.jpg">
+		</td>
+		<td>
+			<img src="https://s-media-cache-ak0.pinimg.com/originals/24/1b/cd/241bcd428f6e77640ac2d9a90ec2093a.jpg">
+		</td>
+		<td>
+			<img src="https://sociorocketnewsen.files.wordpress.com/2015/06/seal-3.jpg?w=580&h=586">
+		</td>
+		<td>
+			<img src="http://stuffpoint.com/cute-food/image/339386-cute-food-mahjong-dessert.jpg">
+		</td>
+		<td>
+			<img src="https://s-media-cache-ak0.pinimg.com/736x/04/67/bd/0467bdd4f8acc9d9cdb4f66c0f776949.jpg">
+		</td>
+		<td>
+			<img src="https://s-media-cache-ak0.pinimg.com/originals/c0/21/eb/c021eb2af7d68db6f1953a4cd34bbbaa.jpg">
+		</td>
+	</tr>
+
+	</tbody>
+</table>
+<br>
+<span  style = "font-family: Arial"> Search the art database using the fields below.</span>
+
+<form method="post" action="index1.html">
+	<pre>
+First Name
+<input type="text" name="firstname">
+<br>
+Last Name
+<input type="text" name="lastname">
+<br>
+<input type="submit" value="SEARCH">
+	</pre>
+</form>
+        <script type="text/javascript">
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var suffix = "AM";
+
+            if (minutes < 10)
+                minutes = "0" + minutes;
+
+            if (hours >= 12) {
+                suffix = "PM";
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+
+            document.write("<b><div id='d1'>"+"Last modified: " + hours + ":" + 
+                minutes + " " + suffix + "</div></b>");
+
+        </script>
+</body>
+</html>
